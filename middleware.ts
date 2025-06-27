@@ -11,7 +11,6 @@ export function middleware(req: NextRequest) {
       headers: { "WWW-Authenticate": 'Basic realm="Secure Area"' },
     });
   }
-
   // Vérification des credentials
   const base64Credentials = authHeader.split(" ")[1];
   const [username, password] = Buffer.from(base64Credentials, "base64")
