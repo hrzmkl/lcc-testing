@@ -1,0 +1,31 @@
+@media screen  and (max-height: 359px){
+    .genContainer{
+        height: calc(100vh + 75px) !important;
+    }
+}
+
+@media screen  and (max-height: 269px){
+    .genContainer{
+        height: calc(100vh + 125px) !important;
+    }
+}
+
+@media screen  and (max-height: 229px){
+    .genContainer{
+        height: calc(100vh + 155px) !important;
+    }
+}
+
+@media screen  and (max-height: 370px){
+    .genContainer{
+        height: calc(100vh + 50px);
+        margin-bottom: -0.5px;
+    }
+
+}
+
+@media screen  and (max-height: 797px){
+    .genText{
+        padding-top: 1rem;
+    }
+}

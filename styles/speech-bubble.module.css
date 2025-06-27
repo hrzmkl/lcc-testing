@@ -1,0 +1,8 @@
+.speech-buble-triangle {
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 9px 20px 9px;
+    border-color: transparent transparent #fdf9e9 transparent;
+    transform: rotate(-45deg);
+}
