@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useEffect, useState, useCallback, useMemo } from "react";
+import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import { useHeader } from "@/hooks/useHeader";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
@@ -86,16 +86,16 @@ const Header = () => {
     <div style={{height: divHeight ?? (!isMd ? 129 : 136) + 'px', willChange: 'height'}} className={`w-full relative z-[99]`}>
       <header className={`transition-transform duration-300 ease-in-out fixed flex-center flex-col top-0 left-0 right-0 z-100 !will-change-transform ${isVisible ? 'translate-y-0' : '-translate-y-[500px]'}`}>
         <div className="bg-black flex flex-center text-center w-full py-[5px] gap-[5px]">
-          <div className={`flex flex-center text-center w-full py-[5px] gap-[5px] ${fade.me}`}>
+          <div className={`flex flex-center text-center w-full gap-[8px] leading-[22.5px] ${fade.me}`}>
             <Link href={`${process.env.NEXT_PUBLIC_REDIRECT}${toggle ? '/content/21-tarifs-et-livraison' : '#csc-newsletter'}`} className={`${fade.opacity} transition-opacity duration-300 text-[13px] text-white text-center hover:decoration-1 hover:underline`}>{ads}</Link>
-            <span className="text-white text-[13px]">|</span>
-            <Link href={`${process.env.NEXT_PUBLIC_REDIRECT}`} className="text-[13px] text-white text-center hover:decoration-1 hover:underline md:">Acheter du café</Link>
+            <span className="border-r border-white h-[22.5px] flex"></span>
+            <Link href={`${process.env.NEXT_PUBLIC_REDIRECT}`} className="text-[13px] text-white text-center hover:decoration-1 hover:underline">Acheter du café</Link>
           </div>
         </div>
         <div ref={divRef} className={`!w-full mx-['auto'] p-0 xl:px-[0] top-0 bg-white`}>
-          <div className="w-full px-4 md:px-7 py-2 flex-center z-[101] shadow-menu">
+          <div className="w-full px-4 md:px-4 py-2 flex-center z-[101]">
             {/* Logo Section - Priorité maximale */}
-            <div className="h-full flex flex-1 gap-5 justify-start items-center relative z-[102]">
+            <div className="h-full flex flex-1 gap-4 justify-start items-center relative z-[102]">
               <Logo />
               <div className="w-[25px] md:w-[30px] relative lg:left-[0%] flex-center">
                 <ImageKit

@@ -136,7 +136,7 @@ export const Nav: React.FC<NavProps> = ({
 
         {/* Desktop Menu */}
         <MenuItems 
-          className='hidden lg:flex items-center gap-[5px]'
+          className='hidden lg:flex items-center gap-[8px]'
           onMouseOver={() => {
             setActiveSub('store');
             isDesktop && handleMouseOver();
@@ -162,7 +162,7 @@ export const Nav: React.FC<NavProps> = ({
             setActiveSub('decouvrir')
               isDesktop && handleMouseOver();
           }}
-          className="transition-all hidden lg:flex items-center gap-[5px]"
+          className="transition-all hidden lg:flex items-center gap-[8px]"
           style={{backgroundColor: openSub && (activeSub === 'decouvrir') ? '#ebecec' : ''}}
         >
           Découvrir
