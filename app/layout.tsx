@@ -15,11 +15,11 @@ export const metadata: Metadata = {
     icon: "/Images/icon.webp",
   },
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
     googleBot: {
-      index: true,
-      follow: true,
+      index: false,
+      follow: false,
     },
   },
 };

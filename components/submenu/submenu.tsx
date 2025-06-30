@@ -42,13 +42,16 @@ const SubMenu1: FC<SubMenu1Props> = ({onClickCapture, className, subtitle = 'sto
     const submenu: {store: Subtitle[][]; decouvrir: Subtitle[][]} ={ 
         decouvrir: [
             [
+                {title: 'Bienvenue', href: '', timeline: ''},
                 {title: 'Tout comprendre en 3 minutes', href: '', handleClick, timeline: 'Voir le film, vous allez adorer. 😊'},
-                {title: 'Stratégie et gouvernance', href: '/strategie-et-gouvernance', handleClick: () => onClickCapture(), timeline: 'Un peu de lecture !'},
             ],
             [
-                {title: 'Méthodologie sur le terrain', href: '/methodologie-sur-le-terrain', handleClick: () => onClickCapture(), timeline: 'Un peu de lecture !'},
-                {title: 'Timeline du programme', href: '/timeline', handleClick: () => onClickCapture(), timeline: 'Comment on s\'y prend là-bas! 😊'},
+                {title: 'Stratégie et gouvernance', href: '/strategie-et-gouvernance', handleClick: () => onClickCapture(), timeline: 'Un peu de lecture !'},
+                {title: 'Méthodologie sur le terrain', href: '/methodologie-sur-le-terrain', handleClick: () => onClickCapture(), timeline: 'Du concret !'},
             ],
+            [
+                {title: 'Timeline du programme', href: '/timeline', handleClick: () => onClickCapture(), timeline: 'Comment on s\'y prend là-bas! 😊'},
+            ]
         ],
         store: [
                     [
