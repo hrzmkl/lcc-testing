@@ -67,6 +67,10 @@ const nextConfig: NextConfig = {
         hostname: 'testing.letscatchcarbon.com',
       },      
       {
+        protocol: 'https',
+        hostname: 'www.letscatchcarbon.com',
+      },       
+      {
         protocol: 'http',
         hostname: 'localhost'
       }
