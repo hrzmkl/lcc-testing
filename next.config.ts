@@ -80,3 +80,4 @@ const nextConfig: NextConfig = {
 // })
 
 // module.exports = withBundleAnalyzer(nextConfig)
+module.exports = nextConfig
