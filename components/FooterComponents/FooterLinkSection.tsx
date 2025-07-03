@@ -36,10 +36,10 @@ const FooterLinkSection = () => {
                   ">
                             <MenuItemsFooter type={'heading'} aria-label={section.title}>{section.title}</MenuItemsFooter>
                             {section.links.map((link, linkIndex) => (
-                                <MenuItemsFooter key={linkIndex} href={`${link.interne ? '' : process.env.NEXT_PUBLIC_REDIRECT}${link.url}`} aria-label={section.title}>{link.title}</MenuItemsFooter>
+                                <MenuItemsFooter target="_blank" key={linkIndex} href={`${link.interne ? '' : process.env.NEXT_PUBLIC_REDIRECT}${link.url}`} aria-label={section.title}>{link.title}</MenuItemsFooter>
                             ))}
                             {section.linksPlus?.map((readmore, linkIndex) => (
-                                <MenuItemsFooter key={linkIndex} href={process.env.NEXT_PUBLIC_REDIRECT + readmore.url}
+                                <MenuItemsFooter target='_blank' key={linkIndex} href={process.env.NEXT_PUBLIC_REDIRECT + readmore.url}
                                                  type={'plus'} aria-label={section.title}>{readmore.title}</MenuItemsFooter>
                             ))}
                         </div>
@@ -64,10 +64,10 @@ const FooterLinkSection = () => {
                             PopOverclassName={'w-[320px] h-[180px]'}
                             PopOverTargetIconClassName='!left-[13%] sm:!left-[40%] md:!left-[45%]'>
                             <ImageKit
-                                src="/Images/logo.webp"
+                                src="/Images/icon.webp"
                                 alt="Chacun son café : Premier torréfacteur certifié B Corp en France, Chacun Son Café fournit des solutions cafés éthiques à la maison et au bureau, qui agissent pour le climat et la biodiversité"
-                                width={300}
-                                height={150}
+                                width={125}
+                                height={60}
                                 className="h-[70px] w-auto object-contain"
                                 loading={'lazy'}
                             />

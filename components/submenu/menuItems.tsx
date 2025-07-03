@@ -26,12 +26,12 @@ export const SubMenuItems = ({
         <Link
             href={href ? href : '#'}
             prefetch={false}
-            className={`w-full h-full flex flex-col justify-center items-start gap-0 cursor-pointer text-nowrap ${className}`}
+            className={`w-full h-full flex flex-col justify-center items-start gap-0 cursor-pointer ${className}`}
             {...props}>
-            <p className="text-nowrap text-[1rem] md:font-semibold text-black hover:underline decoration-1 m-0 p-0">
+            <p className="text-nowrap md:text-wrap text-[1rem] lg:text-submenu font-bold text-black hover:underline decoration-2 m-0 p-0">
                 {title}
             </p>
-            {timeline && <p className="!hidden md:!flex text-[0.9375rem] italic text-black flex-center m-0 p-0">
+            <p className="!hidden md:!flex text-[13px] lg:text-submenuTimeline italic text-black flex-center m-0 p-0">
                 {timeline}  {icon != '' && (<span className="!not-italic text-mm">{icon}</span>)}
                 {image != '' && (
                     <ImageKit
@@ -41,7 +41,7 @@ export const SubMenuItems = ({
                         height={40}
                         className="size-7 8xl:size-8 object-contain relative left-[1%]"
                     />)}
-            </p>}
+            </p>
         </Link>
 
 );
@@ -62,7 +62,7 @@ export const MenuItems = ({
     <Link
         href={href ? href : '#'}
         style={{transition: 'background .2s ease-in', ...style }}
-        className={`md:px-6 py-3 md:rounded-full md:hover:bg-[#ebecec] text-[20px] md:text-[1rem] text-black font-semibold font-submenu cursor-pointer leading-none ${className}`}
+        className={`px-[32px] py-[16px] rounded-full hover:bg-[#ebecec] text-black font-bold font-submenu cursor-pointer  ${className}`}
         {...props}>
         {children}
     </Link>

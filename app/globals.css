@@ -102,11 +102,7 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: var(--font-din-pro), var(--font-roboto), sans-serif;
-}
-
-header, .font-roboto {
-    font-family: var(--font-roboto), var(--font-din-pro), sans-serif !important;
+    font-family: var(--font-din-pro), sans-serif;
 }
 
 .modal-overlay {

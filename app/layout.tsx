@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "aos/dist/aos.css";
 import "./globals.css";
 import { dinPro } from "./font";
-import { Roboto } from 'next/font/google';
 
 export const metadata: Metadata = {
   title: {
@@ -15,19 +14,14 @@ export const metadata: Metadata = {
     icon: "/Images/icon.webp",
   },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
     googleBot: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
     },
   },
 };
-
-const roboto = Roboto({
-  subsets: ['latin'],
-  variable: '--font-roboto',
-});
 
 export default function RootLayout({
   children,
@@ -40,7 +34,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://erp.chacunsoncafe.fr" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://ik.imagekit.io" />
       </head>
-      <body className={`${dinPro.variable} ${roboto.variable}`}>{children}</body>
+      <body className={`${dinPro.variable}`}>{children}</body>
     </html>
   );
 }

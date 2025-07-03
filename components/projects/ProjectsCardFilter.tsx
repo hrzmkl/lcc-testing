@@ -42,7 +42,7 @@ const ProjectsCardFilter = ({
   const isActiveFilters = Object.values(activeFilters).some((filter) => filter !== "");
 
   return (
-    <div className="w-full max-w-[1022px] mx-auto h-full flex justify-center items-start relative top-[7%] mb-6 gap-4 z-[2]">
+    <div className="w-full max-w-[1022px] mx-auto h-full flex justify-center items-start relative top-[7%] mb-6 gap-4 z-50">
       <div className="flex flex-col sm:flex-row gap-4 w-full relative min-h-[50px]">
         <ProjectCardFilterItem filterType="options_proj_localisation" filters={filtersValue1} handleFilter={handleFilter}>
           {activeFilters.options_proj_localisation || "Localisation"}

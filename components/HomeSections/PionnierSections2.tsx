@@ -33,8 +33,8 @@ const SectionsPionniers2 = () => {
 
   return (
     <section id="Pionnier2">
-      <div className="lg:h-auto mid-xl:h-[calc(100vh-40px)] 2xl:h-[calc(100vh)] relative w-full flex flex-col items-center justify-between lg:justify-end gap-[3rem] overflow-hidden" id="generations">
-        <div className="mid-xl:absolute mid-xl:top-0 max-w-[1605px] px-[16px] overflow-visible pt-4">
+      <div className="lg:h-auto mid-xl:h-[calc(100vh-112px)] relative w-full flex flex-col items-center justify-between lg:justify-end gap-[3rem] overflow-hidden" id="generations">
+        <div className="mid-xl:absolute mid-xl:top-0 max-w-[1605px] px-[16px] overflow-visible pt-[0] sm:pt-0 5xl:pt-[0]">
           <div
             data-aos="zoom-in"
             data-aos-duration="800"
@@ -50,7 +50,7 @@ const SectionsPionniers2 = () => {
           </div>
         </div>
         <div className="w-full overflow-visible flex-center">
-          <div className="h-full px-[5%] lg:w-[70%] mid-xl:w-[77%] 2xl:w-[78%] xl:w-[70%] 5xl:w-[70%] 9xl:w-[77%] xl:px-0 flex-center p-0">
+          <div className="h-full px-[5%] lg:w-[70%] mid-xl:w-[77%] 2xl:w-[75%] xl:w-[70%] 5xl:w-[70%] 9xl:w-[77%] xl:px-0 flex-center p-0">
             <ImageKit {...imageProps} />
           </div>
         </div>

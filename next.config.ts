@@ -67,10 +67,6 @@ const nextConfig: NextConfig = {
         hostname: 'testing.letscatchcarbon.com',
       },      
       {
-        protocol: 'https',
-        hostname: 'www.letscatchcarbon.com',
-      },       
-      {
         protocol: 'http',
         hostname: 'localhost'
       }
@@ -81,6 +77,5 @@ const nextConfig: NextConfig = {
 // const withBundleAnalyzer = require('@next/bundle-analyzer')({
 //   enabled: process.env.ANALYZE === 'true',
 // })
-
 
 // module.exports = withBundleAnalyzer(nextConfig)
