@@ -29,6 +29,7 @@ const nextConfig: NextConfig = {
     resolveExtensions: ['.mdx', '.tsx', '.ts', '.jsx', '.js', '.json'],
   },
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
