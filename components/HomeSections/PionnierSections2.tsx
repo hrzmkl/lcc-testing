@@ -1,6 +1,14 @@
+import { useRef, useEffect } from "react";
 import SubTitle from '../ui/SubTitle';
 import ImageKit from "../ui/ImageKit";
 import useMediaQuery from '@/lib/useMediaQuery';
+
+// @ts-ignore
+import gsap from "gsap";
+// @ts-ignore
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const subtitleText = (
   <>
@@ -12,13 +20,16 @@ const subtitleText = (
 
 const SectionsPionniers2 = () => {
   const isLg = useMediaQuery('(min-width: 1024px)');
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+  const imgWrapperRef = useRef<HTMLDivElement>(null);
 
   // Props factorisation pour ImageKit
   const imageProps = isLg
     ? {
         src: "/Images/CommunityLarge1920.webp",
         alt: "LCC_people",
-        className: "aspect-[1920/1090] h-auto w-full object-cover -mb-[5px]",
+        className: "aspect-[1920/1090] h-full w-auto object-cover transition-all duration-300",
         width: 1920,
         height: 1090,
       }
@@ -31,14 +42,81 @@ const SectionsPionniers2 = () => {
         quality: 50,
       };
 
+  useEffect(() => {
+    if (!isLg) return;
+
+    const section = sectionRef.current;
+    const text = textRef.current;
+    const imgWrapper = imgWrapperRef.current;
+
+    if (!section || !text || !imgWrapper) return;
+
+    // Reset styles
+    gsap.set(text, { clearProps: "all" });
+    // gsap.set(imgWrapper, { clearProps: "all" });
+    gsap.set(imgWrapper, { minWidth: '100%', minHeight: '60%' });
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: "+=1000",
+          scrub: true,
+          pin: true,
+          anticipatePin: 1,
+        }
+      });
+
+      // Texte : shrink & hide
+      tl.to(text, {
+        opacity: 0,
+        height: 0,
+        duration: 1,
+        ease: "power1.inOut"
+      }, 0);
+
+      // Image : expand to full viewport
+      tl.to(imgWrapper, {
+        width: "100vw",
+        height: "100vh",
+        maxWidth: "100vw",
+        maxHeight: "100vh",
+        // left: 0,
+        bottom: 0,
+        // x: 0,
+        // y: 0,
+        position: "absolute",
+        zIndex: 10,
+        duration: 1,
+        ease: "power1.inOut"
+      }, 0);
+
+      tl.to({}, {
+        duration: 0.5 // ajuste la durée selon le temps de "pause" voulu
+      });
+
+      // On reset, restore position
+      ScrollTrigger.create({
+        trigger: section,
+        start: "bottom top",
+        onLeave: () => {
+          gsap.set(imgWrapper, { clearProps: "all" });
+        },
+        onEnterBack: () => {
+          gsap.set(imgWrapper, { clearProps: "all" });
+        }
+      });
+    }, section);
+
+    return () => ctx.revert();
+  }, [isLg]);
+
   return (
-    <section id="Pionnier2">
-      <div className="lg:h-auto mid-xl:h-[calc(100vh-112px)] relative w-full flex flex-col items-center justify-between lg:justify-end gap-[3rem] overflow-hidden" id="generations">
-        <div className="mid-xl:absolute mid-xl:top-0 max-w-[1605px] px-[16px] overflow-visible pt-[0] sm:pt-0 5xl:pt-[0]">
+    <section id="Pionnier2" ref={sectionRef} className="relative overflow-visible">
+      <div className="lg:h-screen relative w-full flex flex-col items-center justify-between lg:justify-start gap-[3rem] lg:gap-[1rem] overflow-hidden" id="generations">
+        <div className="max-w-[1605px] px-[16px] overflow-visible pt-4" ref={textRef}>
           <div
-            data-aos="zoom-in"
-            data-aos-duration="800"
-            data-aos-easing="ease-in-sine"
             className="h-full flex-col gap-[0px] flex-center pt-[8px] xl:pb-[2rem] z-[88]"
           >
             <p className="w-full font-din text-h3 lg:text-h2 5xl:text-h1 font-black text-[#244f19] leading-[48px] lg:leading-[76px] 5xl:leading-[102px] text-center -tracking-[3px]">
@@ -49,8 +127,12 @@ const SectionsPionniers2 = () => {
             </SubTitle>
           </div>
         </div>
-        <div className="w-full overflow-visible flex-center">
-          <div className="h-full px-[5%] lg:w-[70%] mid-xl:w-[77%] 2xl:w-[75%] xl:w-[70%] 5xl:w-[70%] 9xl:w-[77%] xl:px-0 flex-center p-0">
+        <div className="w-full flex-center h-[60%]">
+          <div
+            ref={imgWrapperRef}
+            className="h-full xl:px-0 flex-center p-0 flex-1 relative transition-all duration-300"
+            style={{ overflow: "hidden" }}
+          >
             <ImageKit {...imageProps} />
           </div>
         </div>

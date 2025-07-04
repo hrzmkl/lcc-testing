@@ -65,7 +65,7 @@ const SheetContent = forwardRef<
       {...props}
     >
       {children}
-      <SheetPrimitive.Close className="outline-none absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none disabled:pointer-events-none data-[state=open]:bg-secondary">
+      <SheetPrimitive.Close className="outline-none absolute right-5 top-5 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none disabled:pointer-events-none data-[state=open]:bg-secondary">
         <Image src='/icons/x.svg' alt="close" width={32} height={32} className="size-8 outline-none" />
         <span className="sr-only">Close</span>
       </SheetPrimitive.Close>

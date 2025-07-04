@@ -1,6 +1,6 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export function middleware(req) {
+export function middleware(req: NextRequest) {
   const authHeader = req.headers.get("authorization");
 
   // Si aucune authentification n'est fournie
